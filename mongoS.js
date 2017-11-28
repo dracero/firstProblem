@@ -12,12 +12,12 @@ MongoClient.connect(dburl, function(err, db) {
       res.header("Access-Control-Allow-Origin", "*");
       if(err) { throw err;  }
       var collection = db.collection('first');
-      var item = { firstName: req.firstName };
+      var item = { firstName: req.body.firstName };
       collection.insert(item, function(err, result) {
       if(err) { throw err; }
     //    res.sendFile(__dirname + "/index.html");
    });
-  console.log(req.body);         
+  console.log(req.body.firstName);// esto lo hago y veo body{} en la consola.        
 });
    
 });
