@@ -11,7 +11,8 @@ class Parent extends React.Component {
   }
  
 doInsert(graba) {
-  
+  data = new FormData();
+  data.append('firstName': this.state.pepe);
   var xhr = new XMLHttpRequest();
   xhr.addEventListener("readystatechange", function () {
    if (this.readyState === 4) {
@@ -19,7 +20,7 @@ doInsert(graba) {
    }
   });
  xhr.open("POST", "http://localhost:3000/");
-    xhr.send(<body>Hola</body>);
+    xhr.send(data);
 }
     
 changeName(newName) {
