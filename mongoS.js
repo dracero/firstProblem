@@ -2,8 +2,11 @@ var express = require("express");
 var app = express();
 var port = 3000;
 var bodyParser = require('body-parser');
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(require('connect').bodyParser());
+
 var MongoClient = require('mongodb').MongoClient;
 var dburl = 'mongodb://admin:admin1234@localhost/test?authSource=admin';
 
